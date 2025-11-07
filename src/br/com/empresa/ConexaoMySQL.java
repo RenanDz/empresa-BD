@@ -22,7 +22,7 @@ public class ConexaoMySQL {
 
             
             conexao = DriverManager.getConnection(url, usuario, senha);
-            System.out.println("✅ Conexão com o banco de dados realizada com sucesso!");
+            System.out.println("Conexão com o banco de dados realizada com sucesso!");
 
             
             Statement stmt = conexao.createStatement();
@@ -31,7 +31,7 @@ public class ConexaoMySQL {
             String sql = "SELECT id, nome, salario FROM funcionario";
             ResultSet rs = stmt.executeQuery(sql);
 
-            System.out.println("\n👨‍💼 Lista de Funcionários:");
+            System.out.println("\n Lista de Funcionários:");
             System.out.println("------------------------------------");
 
             
@@ -47,14 +47,14 @@ public class ConexaoMySQL {
             stmt.close();
             conexao.close();
             System.out.println("------------------------------------");
-            System.out.println("🔒 Conexão encerrada com sucesso.");
+            System.out.println("Conexão encerrada com sucesso.");
 
         } catch (ClassNotFoundException e) {
-            System.out.println("❌ Driver JDBC não encontrado.");
+            System.out.println("Driver JDBC não encontrado.");
             e.printStackTrace();
 
         } catch (SQLException e) {
-            System.out.println("❌ Erro ao conectar ou executar comandos no banco de dados.");
+            System.out.println("Erro ao conectar ou executar comandos no banco de dados.");
             e.printStackTrace();
         }
     }
